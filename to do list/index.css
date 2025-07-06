@@ -1,0 +1,143 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333;
+  --accent-color: #28a745;
+  --danger-color: #dc3545;
+  --gray: #f0f0f0;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1e1e1e;
+  --text-color: #eee;
+  --accent-color: #4caf50;
+  --danger-color: #f44336;
+  --gray: #2c2c2c;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.controls input, .controls button, .controls select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.task-input {
+  flex: 2;
+}
+
+.task-date {
+  flex: 1;
+}
+
+#add-btn {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#theme-toggle {
+  margin-bottom: 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#search {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--gray);
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+li.overdue {
+  border-left: 4px solid var(--danger-color);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+  }
+}
+
+/* 🌄 Background Image Setup */
+html, body {
+  height: 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px) brightness(0.7);
+  z-index: -1;
+}
