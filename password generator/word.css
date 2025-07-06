@@ -1,0 +1,160 @@
+:root {
+    --bg: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    --container-bg: #1e1e2f;
+    --text: #ffffff;
+    --accent: #00ffcc;
+    --input-bg: #2d2d3a;
+    --btn-bg: #00ffcc;
+    --btn-hover: #00cc99;
+    --border: #444;
+  }
+  
+  body.light-mode {
+    --bg: #f5f5f5;
+    --container-bg: #ffffff;
+    --text: #111;
+    --accent: #007acc;
+    --input-bg: #eeeeee;
+    --btn-bg: #007acc;
+    --btn-hover: #005fa3;
+    --border: #ccc;
+  }
+  
+  /* Background image and overlay */
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://images.app.goo.gl/J4uWqLoYyZjnfiHt6') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background: var(--container-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .output-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #password-display {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--input-bg);
+    color: var(--text);
+    transition: transform 0.3s ease;
+  }
+  
+  #password-display.animate {
+    transform: scale(1.05);
+  }
+  
+  button {
+    background-color: var(--btn-bg);
+    color: var(--container-bg);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    
+  }
+  
+  button:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  .options {
+    text-align: left;
+    margin: 1rem 0;
+  }
+  
+  .options label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  #length-slider {
+    width: 100%;
+  }
+  
+  .strength {
+    margin: 1rem 0;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  #theme-toggle {
+    float: right;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  #history-list {
+    list-style: none;
+    padding-left: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  #history-list li {
+    background: var(--input-bg);
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .history-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 500px) {
+    .container {
+      padding: 1rem;
+      border-radius: 8px;
+    }
+  
+    button, #password-display {
+      font-size: 0.9rem;
+    }
+  }
+  

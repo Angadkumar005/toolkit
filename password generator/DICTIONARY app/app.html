@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dictionary App</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>    Angad Kumar    </h1>
+    <h1>
+      <img src="https://img.icons8.com/ios-filled/24/007bff/book.png" alt="Dictionary Icon" style="vertical-align: middle; margin-right: 8px;" />
+      Dictionary App
+    </h1>
+    <button id="toggleMode">🌙 Toggle Dark Mode</button><br />
+    <input type="text" id="searchInput" placeholder="Enter a word..." />
+    <button onclick="searchWord()">Search</button>
+    <div id="loader" style="display:none;">Loading...</div>
+    <div id="result"></div>
+    <div id="recentWords">
+      <strong>Recent Searches:</strong>
+      <ul id="recentList"></ul>
+      <button id="clearRecent" style="margin-top: 10px; background-color: #dc3545;">Clear Recent Searches</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

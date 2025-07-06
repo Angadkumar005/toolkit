@@ -1,0 +1,118 @@
+:root {
+    --bg: #f9f9f9;
+    --text: #000;
+    --container: rgba(255, 255, 255, 0.85);
+  }
+  
+  body.dark {
+    --bg: #1e1e1e;
+    --text: #f1f1f1;
+    --container: rgba(44, 44, 44, 0.85);
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+    overflow: hidden;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: -1;
+    transition: background 0.3s;
+  }
+  
+  body.dark::before {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .container {
+    background: var(--container);
+    padding: 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    backdrop-filter: blur(8px);
+  }
+  
+  input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px 5px 0;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    box-shadow: 0 6px 10px rgba(0, 86, 179, 0.6);
+  }
+  
+  #clearRecent {
+    background-color: #dc3545;
+    box-shadow: 0 4px 6px rgba(220, 53, 69, 0.4);
+  }
+  
+  #clearRecent:hover {
+    background-color: #b52a37;
+    box-shadow: 0 6px 10px rgba(181, 42, 55, 0.6);
+  }
+  
+  #loader {
+    margin-top: 15px;
+    font-style: italic;
+  }
+  
+  #result {
+    margin-top: 20px;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #recentWords {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #recentList li {
+    list-style: square;
+    margin-left: 20px;
+  }
+  
